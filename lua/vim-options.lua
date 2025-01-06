@@ -12,3 +12,5 @@ elseif uname == "Darwin" then
 else
   vim.opt.shell = "bash"
 end
+
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]],{noremap=true})

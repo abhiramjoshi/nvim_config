@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright", "ruff", "ts_ls", "gopls" },
+        ensure_installed = { "lua_ls", "pyright", "ruff", "ts_ls", "gopls", "gh_actions_ls", "yamlls" },
       })
     end,
   },
@@ -31,6 +31,23 @@ return {
         },
       })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
+      lspconfig.gh_actions_ls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.yamlls.setup({
+        capabilities = capabilities
+        --init_options = {
+        --  settings = {
+        --    yaml = {
+        --      schemas = {
+        --        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+        --        ["../path/relative/to/file.yml"] = "/.github/workflows/*",
+        --        ["/path/from/root/of/project"] = "/.github/workflows/*",
+        --      },
+        --    },
+        --  }
+        --}
+      })
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
     end,

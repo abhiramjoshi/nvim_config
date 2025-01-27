@@ -13,4 +13,5 @@ else
   vim.opt.shell = "bash"
 end
 
+vim.keymap.set('n', '<C-w>d', vim.diagnostic.open_float, { desc = "Show error dropdown"})
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]],{noremap=true})

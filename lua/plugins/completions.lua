@@ -1,5 +1,13 @@
 return {
   {
+    "github/copilot.vim",
+    config = function()
+      vim.g.copilot_filetypes = {
+        markdown = false,
+      }
+    end,
+  },
+  {
     "windwp/nvim-autopairs",
 
     event = "InsertEnter",
@@ -9,6 +17,7 @@ return {
   },
   {
     "hrsh7th/cmp-nvim-lsp",
+    version = "^1.0"
   },
   {
     "L3MON4D3/LuaSnip",

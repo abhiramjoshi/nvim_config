@@ -79,6 +79,18 @@ return {
           col = 1
         },
       })
+
+      vim.keymap.set('n', '<leader>gg', ':terminal git status<CR>', {desc="Git status"})
+      vim.keymap.set('n', '<leader>gc', ':terminal git commit<CR>', {desc="Git commit"})
+      vim.keymap.set('n', '<leader>gp', ':terminal git push<CR>', {desc="Git push"})
+      vim.keymap.set('n', '<leader>gL', ':terminal git pull<CR>', {desc="Git pull"})
+      vim.keymap.set('n', '<leader>gl', ':terminal git log --oneline --graph --decorate --all<CR>', {desc="Git log"})
+      vim.keymap.set('n', '<leader>ga', ':!git add %<CR>', {desc="Git add current file"})
+      vim.keymap.set('n', '<leader>gA', ':!git add .<CR>', {desc="Git add all"})
+      vim.keymap.set('n', '<leader>gu', ':!git add -u<CR>', {desc="Git add updates"})
+      vim.keymap.set('n', '<leader>gs', ':terminal git status<CR>', {desc="Git status"})
+      vim.keymap.set('n', '<leader>gd', ':Gitsigns diffthis<CR>', {desc="Diff current file"})
+      vim.keymap.set('n', '<leader>gD', ':terminal git diff<CR>', {desc="Git diff all"})
     end
   }
 }
